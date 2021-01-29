@@ -16,8 +16,8 @@ public interface ParameterRepository extends JpaRepository<ParameterEntity, Long
      * @param templateId,parameterName
      * @return
      */
-    @Query(value = "select * from tb_parameter tp where tp.template_id = ?1 and tp.parameter_name like CONCAT('%',:parameterName,'%')", nativeQuery = true)
-    List<ParameterEntity> getParameterByNameAndTemplateId(Long templateId, @Param("parameterName")String parameterName);
+    @Query(value = "select * from tb_parameter tp where tp.template_id =:templateId and tp.parameter_name like CONCAT('%',:parameterName,'%')", nativeQuery = true)
+    List<ParameterEntity> getParameterByNameAndTemplateId(@Param("templateId")Long templateId, @Param("parameterName")String parameterName);
 
     /**
      * 根据模板id确定该模板有哪些参数
