@@ -8,6 +8,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
@@ -16,7 +17,7 @@ import java.util.Date;
 @DynamicUpdate
 @Table(name = "tb_equipment")
 @EntityListeners(AuditingEntityListener.class)
-public class EquipmentEntity {
+public class EquipmentEntity implements Serializable {
 
 
     private static final long serialVersionUID = -1785824516147698045L;

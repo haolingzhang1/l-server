@@ -6,6 +6,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @DynamicUpdate
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "tb_parameter")
-public class ParameterEntity {
+public class ParameterEntity implements Serializable {
 
     private static final long serialVersionUID = -1785824516147698045L;
 
